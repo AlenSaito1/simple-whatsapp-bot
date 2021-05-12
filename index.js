@@ -63,13 +63,8 @@ prefix = '/';
 source_link = 'https://github.com/karmaisgreat/simple-whatsapp-bot';
 
 // LOAD CUSTOM FUNCTIONS
-const getGroupAdmins = (participants) => {
-	admins = []
-	for (let i of participants) {
-		i.isAdmin ? admins.push(i.jid) : ''
-	}
-	return admins
-}
+const getGroupAdmins = (participants) => participants.filter((user) > user.isAdmin)
+
 const adminHelp = (prefix, groupName) => {
         return `
 ─「 *${groupName} Admin Commands* 」─
